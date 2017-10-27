@@ -69,6 +69,8 @@
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-polyfill": "^6.23.0",
     "babel-preset-env": "^1.6.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
     "chai": "^4.0.1",
     "circular-dependency-plugin": "^4.2.0",
     "cross-env": "^5.0.5",
@@ -106,6 +108,7 @@
     "phantomjs-prebuilt": "^2.1.7",
     "querystring": "^0.2.0",
     "raw-loader": "^0.5.1",
+    "react-frame-component": "^2.0.0",
     "serve": "^6.2.0",
     "sinon": "^4.0.1",
     "sinon-chai": "^2.8.0",
@@ -117,6 +120,8 @@
     "yargs": "^9.0.1"
   },
   "dependencies": {
+    "cleanslate": "^0.10.1",
+    "react-frame-component": "^2.0.0",
     "xcomponent": "^6.0.8"
   }
 }

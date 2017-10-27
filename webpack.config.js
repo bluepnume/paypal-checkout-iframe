@@ -8,17 +8,12 @@ import webpack from 'webpack';
 import UglifyJSPlugin from 'uglifyjs-webpack-plugin';
 import CircularDependencyPlugin from 'circular-dependency-plugin';
 
-const FILE_NAME = 'xcomponent-demo';
-const MODULE_NAME = 'xclogin';
+const FILE_NAME = 'paypal-button-frame';
+const MODULE_NAME = 'ppButtonFrame';
 
 const DEFAULT_VARS = {
     __TEST__:                           false,
-    __MIN__:                            false,
-    __IE_POPUP_SUPPORT__:               false,
-    __CHILD_WINDOW_ENFORCE_LOG_LEVEL__: false,
-    __SEND_POPUP_LOGS_TO_OPENER__:      false,
-    __POPUP_SUPPORT__:                  false,
-    __DEFAULT_CONTEXT__:                'iframe'
+    __MIN__:                            false
 };
 
 type WebpackConfigOptions = {
@@ -123,56 +118,11 @@ function getWebpackConfig({ filename, modulename, minify = false, options = {}, 
     };
 }
 
-export let WEBPACK_CONFIG_FRAME = getWebpackConfig({
-    filename:   `${ FILE_NAME }.frame.js`,
+export let WEBPACK_CONFIG = getWebpackConfig({
+    filename:   `${ FILE_NAME }.js`,
     modulename: MODULE_NAME
 });
 
-export let WEBPACK_CONFIG_FRAME_MIN = getWebpackConfig({
-    filename:   `${ FILE_NAME }.frame.min.js`,
-    modulename: MODULE_NAME,
-    minify:     true,
-    vars:       {
-        __MIN__: true
-    }
-});
-
-export let WEBPACK_CONFIG_POPUP = getWebpackConfig({
-    filename:   `${ FILE_NAME }.popup.js`,
-    modulename: MODULE_NAME,
-    vars:       {
-        __DEFAULT_CONTEXT__:  'popup',
-        __POPUP_SUPPORT__:    true,
-        __IE_POPUP_SUPPORT__: true
-    }
-});
-
-export let WEBPACK_CONFIG_POPUP_MIN = getWebpackConfig({
-    filename:   `${ FILE_NAME }.popup.min.js`,
-    modulename: MODULE_NAME,
-    minify:     true,
-    vars:       {
-        __DEFAULT_CONTEXT__:  'popup',
-        __POPUP_SUPPORT__:    true,
-        __IE_POPUP_SUPPORT__: true,
-        __MIN__:              true
-    }
-});
-
-export let WEBPACK_CONFIG_TEST = getWebpackConfig({
-    filename:   `${ FILE_NAME }.js`,
-    modulename: MODULE_NAME,
-    options:    {
-        devtool: 'inline-source-map'
-    },
-    vars: {
-        __TEST__: true
-    }
-});
-
 export default [
-    WEBPACK_CONFIG_FRAME,
-    WEBPACK_CONFIG_FRAME_MIN,
-    WEBPACK_CONFIG_POPUP,
-    WEBPACK_CONFIG_POPUP_MIN
+    WEBPACK_CONFIG
 ];

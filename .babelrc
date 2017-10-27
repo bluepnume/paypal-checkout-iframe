@@ -24,7 +24,7 @@
         [ "transform-es3-member-expression-literals", { "loose": true } ],
         [ "transform-es2015-for-of", { "loose": true } ],
         [ "transform-decorators-legacy", { "loose": true } ],
-        [ "babel-plugin-transform-react-jsx", { "pragma": "jsxDom" } ]
+        [ "babel-plugin-transform-react-jsx", { "loose": true } ]
     ],
 
     "env": {
